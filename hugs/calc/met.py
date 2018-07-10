@@ -85,9 +85,9 @@ def get_wind_components(speed, wdir):
     get_wind_dir
 
     """
-    if wdir > 360:
+    if np.any(np.array(wdir) > 360):
         warnings.warn('Wind direction greater than 360 degrees.')
     wdir = np.radians(wdir)
-    u = -speed * np.sin(wdir)
-    v = -speed * np.cos(wdir)
+    u = -np.array(speed) * np.sin(wdir)
+    v = -np.array(speed) * np.cos(wdir)
     return u, v
