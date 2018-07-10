@@ -11,7 +11,7 @@ python:
   - 3.6
 
 install:
-  - pip install .
+  - pip install . flake8 pytest-flake8 flake8-docstrings flake8-import-order
 
 script:
-  - pytest
+  - pytest --flake8

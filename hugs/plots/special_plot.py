@@ -6,6 +6,7 @@ import numpy as np
 
 
 def random_plot(num_points, seed=None):
+    """Doing stuff."""
     if seed:
         np.random.seed(seed)
     x = np.random.rand(num_points)

@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 """Test the `met` module."""
 
-from hugs.calc import get_wind_dir, get_wind_speed, get_wind_components, snell_angle
+from hugs.calc import get_wind_components, get_wind_dir, get_wind_speed, snell_angle
 
 import numpy as np
 from numpy.testing import assert_almost_equal, assert_array_almost_equal
+
 import pytest
 
 
@@ -40,7 +41,7 @@ def test_dir():
 
 
 def test_wind_components():
-    # test scalar values
+    """Test scalar values."""
     speed1 = 100
     wdir1 = 90
     u1, v1 = get_wind_components(speed1, wdir1)
@@ -53,7 +54,7 @@ def test_wind_components():
     speed2 = [100, 200]
     wdir2 = [90, 0]
     u2, v2 = get_wind_components(speed2, wdir2)
-    np.testing.assert_almost_equal(u2, np.array([-100.,   -0.]))
+    np.testing.assert_almost_equal(u2, np.array([-100., -0.]))
     np.testing.assert_almost_equal(
         v2, np.array([-6.123234e-15, -2.000000e+02]))
 
@@ -65,12 +66,12 @@ def test_wind_components():
 
 
 def test_snell_zero():
-    # test for exceptions
+    """Test for exceptions."""
     incoming = 0
     vtop = 0
     vbottom = 100
     with pytest.raises(ValueError):
-        angle = snell_angle(incoming, vtop, vbottom)
+        snell_angle(incoming, vtop, vbottom)
 
 
 if __name__ == '__main__':
