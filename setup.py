@@ -13,7 +13,8 @@ config = {
     'author_email': 'kd5wxb@gmail.com',
     'version': '0.1',
     'install_requires': ['numpy', 'matplotlib'],
-    'packages': ['hugs'],
+    'packages': ['hugs',
+                 'hugs.calc'],
     'scripts': [],
     'name': 'hugs'
 }
