@@ -15,7 +15,7 @@ config = {
     'install_requires': ['numpy', 'matplotlib'],
     'packages': ['hugs',
                  'hugs.calc',
-                 'hugs.plot'],
+                 'hugs.plots'],
     'scripts': [],
     'name': 'hugs'
 }
